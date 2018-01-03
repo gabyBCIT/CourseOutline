@@ -11,7 +11,7 @@ public class Task {
     private Date dueDate;
     private boolean complete;
     
-    private Task(String name, Date date) {
+    public Task(String name, Date date) {
         taskName = name;
         dueDate = date;
         complete = false;
@@ -64,6 +64,17 @@ public class Task {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
+
+    /**
+     * @see java.lang.Object#toString()
+     * @return
+     */
+    @Override
+    public String toString() {
+        return " Task: " + taskName + " Complete?: " + complete + " Due Date: " + dueDate.toString();
+    }
+    
+
     
     
 }
