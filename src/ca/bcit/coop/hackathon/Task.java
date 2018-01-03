@@ -52,16 +52,6 @@ public class Task {
     }
 
     /**
-     * @see java.lang.Object#toString()
-     * @return
-     */
-    @Override
-    public String toString() {
-        return " Task: " + taskName + " Due Date: " + dueDate.toString()
-            + " Week: " + Schedule.getWeekNumber(dueDate.month, dueDate.day);
-    }
-
-    /**
      * Returns the course for this Task.
      * @return the course
      */
@@ -76,6 +66,17 @@ public class Task {
     public void setCourse(CourseName course) {
         this.course = course;
     }
+    /**
+     * @see java.lang.Object#toString()
+     * @return
+     */
+    @Override
+    public String toString() {
+        return " Task: " + taskName + " Due Date: " + dueDate.toString() + "Course Name: " 
+                + course;
+    }
+
+
     
 
     
