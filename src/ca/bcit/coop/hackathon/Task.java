@@ -9,11 +9,13 @@ package ca.bcit.coop.hackathon;
 public class Task {
     private String taskName;
     private Date dueDate;
+    private CourseName course;
     
     
-    public Task(String name, Date date) {
+    public Task(String name, Date date, CourseName course) {
         taskName = name;
         dueDate = date;
+        this.course = course;
         
     }
 
@@ -57,6 +59,22 @@ public class Task {
     public String toString() {
         return " Task: " + taskName + " Due Date: " + dueDate.toString()
             + " Week: " + Schedule.getWeekNumber(dueDate.month, dueDate.day);
+    }
+
+    /**
+     * Returns the course for this Task.
+     * @return the course
+     */
+    public CourseName getCourse() {
+        return course;
+    }
+
+    /**
+     * Sets course for this Task.
+     * @param course the course to set
+     */
+    public void setCourse(CourseName course) {
+        this.course = course;
     }
     
 
