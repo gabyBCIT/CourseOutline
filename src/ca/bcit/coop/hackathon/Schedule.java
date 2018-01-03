@@ -70,6 +70,15 @@ public class Schedule {
 
     }
 
+    /**
+     * Returns the week number of the semester when given a new date.
+     * 
+     * @param month
+     *          the month of the date
+     * @param day
+     *          the day of the month
+     * @return
+     */
     public static int getWeekNumber(int month, int day) {
 
         Calendar date1 = new GregorianCalendar(2018, 0, 8);

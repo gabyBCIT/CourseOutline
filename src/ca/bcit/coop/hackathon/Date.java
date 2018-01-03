@@ -8,8 +8,8 @@ package ca.bcit.coop.hackathon;
  * @version 2018
  */
 public class Date {
-    private int month;
-    private int day;
+    public int month;
+    public int day;
     
     public Date(int month, int day) {
         this.month = month;
