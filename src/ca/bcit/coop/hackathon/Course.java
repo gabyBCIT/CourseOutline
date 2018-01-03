@@ -45,6 +45,27 @@ public class Course {
     public void addTask(Task newTask) {
         taskList.add(newTask);
     }
+    /**
+     * @see java.lang.Object#toString()
+     * @return
+     */
+    @Override
+    public String toString() {
+        String output = "Course: " + name + courseNumber;
+        for (Task temp : taskList) {
+            output += temp.toString();
+        }
+        return output;
+    }
+    
+    public static void main(String[] args) {
+        Date assignment = new Date(2, 21);
+        ArrayList<Task> task = new ArrayList<Task>();
+        Task task1 = new Task("Assignment", assignment);
+        task.add(task1);
+        Course math = new Course("COMP", 1113, task);
+        System.out.println(math.toString());
+    }
     
    
   
