@@ -58,14 +58,7 @@ public class Course {
         return output;
     }
     
-    public static void main(String[] args) {
-        Date assignment = new Date(2, 21);
-        ArrayList<Task> task = new ArrayList<Task>();
-        Task task1 = new Task("Assignment", assignment);
-        task.add(task1);
-        Course math = new Course("COMP", 1113, task);
-        System.out.println(math.toString());
-    }
+    
     
    
   
