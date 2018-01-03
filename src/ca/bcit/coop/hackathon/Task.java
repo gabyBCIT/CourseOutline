@@ -11,9 +11,9 @@ public class Task {
     private Date dueDate;
     private boolean complete;
     
-    private Task(String name, String date) {
+    private Task(String name, Date date) {
         taskName = name;
-        dueDate = Date(date);
+        dueDate = date;
         complete = false;
     }
 
