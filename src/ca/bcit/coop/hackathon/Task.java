@@ -166,8 +166,7 @@ public class Task implements Comparable<Task> {
         Task task = new Task("task", date, course);
         
         tasks.get(i).add(task);
-        
-        
+                
         }
         
         
