@@ -52,6 +52,13 @@ public class Task implements Comparable<Task> {
 
         // Adds the task in the array according to its date.
         int dayNumber = getDaysNumber(date.getMonth(), date.getDay());
+<<<<<<< HEAD
+        
+        for (int i = 0; i < 104; i++) {
+            array.add(new ArrayList<Task>());
+        }
+=======
+>>>>>>> refs/remotes/origin/master
         array.get(dayNumber - 1).add(this);
         Calendar dayName = new GregorianCalendar(2018, date.getMonth(), date.getDay());
         dayOfWeek = dayName.get(Calendar.DAY_OF_WEEK) - 1; // 0-6 sun-sat
@@ -156,6 +163,7 @@ public class Task implements Comparable<Task> {
         return test;
 
     }
+    
 
     /**
      * @see java.lang.Object#toString()
@@ -163,7 +171,6 @@ public class Task implements Comparable<Task> {
      */
     @Override
     public String toString() {
-<<<<<<< HEAD
         return " Task: " + taskName + " \nDue Date: " + dueDate.toString() + "\nCourse Name: " + course;
     }
     
@@ -192,10 +199,7 @@ public class Task implements Comparable<Task> {
                 }
             }
         }
-=======
-        return "Task: " + taskName + " Due Date: " + dueDate.toString() + " Course Name: " 
-                + course;
->>>>>>> c62d72a4376a0bd6d1a06e44dbdabf50d6086c1a
+
     }
 
     @Override
