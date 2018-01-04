@@ -42,7 +42,6 @@ public class Date {
         return "Month " + month + " Day " + day;
     }
     
-    
     public int compareTo(Date o) {
         if (this.month == o.month) {
             return this.day - o.day;
@@ -52,6 +51,11 @@ public class Date {
         } else {
             return o.month - this.month;
         }
+        
+    }
+    
+    public boolean equals(Date o) {
+        return (month == o.month && day == o.day);
         
     }
 }
