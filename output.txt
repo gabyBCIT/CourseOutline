@@ -1,10 +1,5 @@
-January 19
+January 17
 
-	COMP2510
+	COMP2121
 		asdf
-
-January 31
-
-	COMP2714
-		fds
 

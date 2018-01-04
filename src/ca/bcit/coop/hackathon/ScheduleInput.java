@@ -1,5 +1,8 @@
 package ca.bcit.coop.hackathon;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -63,7 +66,14 @@ public class ScheduleInput extends GridPane {
         button.setOnAction(this::processButtonPress);
         
         Button submit = new Button("Submit");
-        submit.setOnAction(this::processDatePicker);
+        submit.setOnAction(arg0 -> {
+            try {
+                processDatePicker(arg0);
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        });
         
         complete = new Text("");
         
@@ -103,6 +113,7 @@ public class ScheduleInput extends GridPane {
         
         String output = courseAdd.getSelectionModel().getSelectedItem().toString();
         
+        new Task(task, dueDate, output);
         Task2 addTask = new Task2(task, dueDate, output);
         
         taskEntry.clear();
@@ -111,7 +122,7 @@ public class ScheduleInput extends GridPane {
         
     }
     
-    public void processDatePicker(ActionEvent event) {
+    public void processDatePicker(ActionEvent event) throws FileNotFoundException {
         
         getChildren().clear();
         
@@ -125,6 +136,24 @@ public class ScheduleInput extends GridPane {
             count++;
             }
         }
+        
+        PrintStream out = new PrintStream(new FileOutputStream("Outline.txt"));
+        System.setOut(out);
+        for(int i = 0; i < 104; i++) {
+            for(Task temp : Task.getArray().get(i)) {
+                int currentTempIndex = Task.getArray().get(i).indexOf(temp);
+                if(currentTempIndex == 0) 
+                    System.out.println(temp.getDueDate().toString() + "\n");
+                if(currentTempIndex > 0) {
+                    if(temp.getCourse().equals(Task.getArray().get(i).get(currentTempIndex - 1).getCourse())) {
+                        System.out.println("\t\t" + temp.getTaskName());
+                    }
+                } else
+                    System.out.println(temp.toString());
+            }
+        }
+        
+        
        
         
         
@@ -176,7 +205,14 @@ public class ScheduleInput extends GridPane {
         button.setOnAction(this::processButtonPress);
         
         Button submit = new Button("Submit");
-        submit.setOnAction(this::processDatePicker);
+        submit.setOnAction(event1 -> {
+            try {
+                processDatePicker(event1);
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        });
         
         setAlignment(Pos.CENTER);
         setHgap(horizontalGap);

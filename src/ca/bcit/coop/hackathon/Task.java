@@ -17,11 +17,11 @@ import java.util.GregorianCalendar;
 public class Task implements Comparable<Task> {
     private String taskName;
     private Date dueDate;
-    private CourseName course;
+    private String course;
     private int dayOfWeek;
     private static ArrayList<ArrayList<Task>> array = new ArrayList<ArrayList<Task>>();
 
-    public Task(String name, Date date, CourseName course) {
+    public Task(String name, Date date, String course) {
         taskName = name;
         dueDate = date;
         this.course = course;
@@ -104,7 +104,7 @@ public class Task implements Comparable<Task> {
      * 
      * @return the course
      */
-    public CourseName getCourse() {
+    public String getCourse() {
         return course;
     }
 
@@ -114,7 +114,7 @@ public class Task implements Comparable<Task> {
      * @param course
      *            the course to set
      */
-    public void setCourse(CourseName course) {
+    public void setCourse(String course) {
         this.course = course;
     }
 
@@ -163,7 +163,7 @@ public class Task implements Comparable<Task> {
         CourseName course = CourseName.COMM2216;
         Date date = new Date(1, i + 10);
         
-        Task task = new Task("task", date, course);
+        Task task = new Task("task", date, "COMP1510");
         
         tasks.get(i).add(task);
                 
