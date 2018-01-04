@@ -22,7 +22,7 @@ public class Task2 implements Comparable<Task2> {
     private Date dueDate;
     
     /** The name of the course for the task.*/
-    private CourseName course;
+    private String course;
     
     /** The day of the week of the assignment due date.*/
     private int dayOfWeek;
@@ -39,7 +39,7 @@ public class Task2 implements Comparable<Task2> {
      * @param course
      *      the course the task is for.
      */
-    public Task2(String name, Date date, CourseName course) {
+    public Task2(String name, Date date, String course) {
         taskName = name;
         dueDate = date;
         this.course = course;
@@ -107,7 +107,7 @@ public class Task2 implements Comparable<Task2> {
      * 
      * @return the course
      */
-    public CourseName getCourse() {
+    public String getCourse() {
         return course;
     }
 
@@ -117,12 +117,13 @@ public class Task2 implements Comparable<Task2> {
      * @param course
      *            the course to set
      */
-    public void setCourse(CourseName course) {
+    public void setCourse(String course) {
         this.course = course;
     }
 
     /**
      * Calculates the amount of days from start to end date.
+     * Day count is one less actual to account for arrays.
      * 
      * @param month
      *            argument.
@@ -141,7 +142,7 @@ public class Task2 implements Comparable<Task2> {
         LocalDateTime startDate = LocalDateTime.ofInstant(d1i, ZoneId.systemDefault());
         LocalDateTime endDate = LocalDateTime.ofInstant(d2i, ZoneId.systemDefault());
 
-        int test = (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
+        int test = (int) ChronoUnit.DAYS.between(startDate, endDate);
 
         System.out.println(test);
 

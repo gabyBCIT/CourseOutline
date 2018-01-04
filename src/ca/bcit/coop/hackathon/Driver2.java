@@ -39,36 +39,16 @@ public class Driver2 {
      */
     
         public static void main(String[] args) throws FileNotFoundException {
-            PrintStream out = new PrintStream(new FileOutputStream("output2.txt"));
-            System.setOut(out);
+
             
-            Task2 task1 = new Task2("Java Lab", new Date(2, 21), CourseName.COMP2526);
-            Task2 task2 = new Task2("Web Assignment", new Date(3, 30), CourseName.COMP2121);
-            Task2 task3 = new Task2("Math Quiz", new Date(3, 30), CourseName.COMP2510);
+            Task2 task1 = new Task2("Java Lab", new Date(2, 21), "COMP2526");
+            Task2 task2 = new Task2("Web Assignment", new Date(3, 30), "COMP2121");
+            Task2 task3 = new Task2("Math Quiz", new Date(3, 30), "COMP2510");
             
             for(Task2 thisTask : Task2.array) {
                 System.out.println(thisTask);
             }
-            Collections.sort(Task2.array);
-            
-            System.out.println("\n--------------------------------\n");
-            for(Task2 thisTask : Task2.array) {
-                System.out.println(thisTask);
-            }
-            
-            System.out.println("\n--------------------------------\n");
-            for(int i = 0; i < Task2.array.size(); i++) {
-                Date dueDate = Task2.array.get(i).getDueDate();
-                CourseName course = Task2.array.get(i).getCourse();
-                String assignment = Task2.array.get(i).getTaskName();
-                
-                 if (i == 0 || !dueDate.equals(Task2.array.get(i-1).getDueDate())) {
-                     System.out.println(dueDate + " \t" + course + " \t" 
-                             + assignment);
-                 } else {
-                     System.out.println("\t\t" + course + " \t" + assignment);
-                 }
-            }
+
         }
     }
 

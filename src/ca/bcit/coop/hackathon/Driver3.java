@@ -21,11 +21,8 @@ public class Driver3 {
 
             day = scan.nextInt();
 
-            CourseName course = CourseName.COMP2510;
+            String course = scan.next();
 
-            if (scan.next().trim().equals("COMP2510")) {
-                course = CourseName.COMP2526;
-            }
 
             scan.nextLine();
             String taskHand = scan.nextLine().trim();
