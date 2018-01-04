@@ -1,15 +1,15 @@
 package ca.bcit.coop.hackathon;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import javafx.collections.FXCollections;
-=======
+//=======
 import java.util.Scanner;
 
->>>>>>> 306d38446179d2a9be811f7c794ed1b794915f48
+//>>>>>>> 306d38446179d2a9be811f7c794ed1b794915f48
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -31,14 +31,14 @@ public class ScheduleInput extends GridPane {
      * Provides the 
      */
     private DatePicker pickDate;
-    
-    
+    private ComboBox<CourseName> courseAdd;
+    private Task task;
     public ScheduleInput() {
         final int horizontalGap = 50;
         final int verticalGap = 10;
         
         Text courseChoice = new Text("Choose the course: ");
-        ComboBox<CourseName> courseAdd = new ComboBox<CourseName>();
+        courseAdd = new ComboBox<CourseName>();
         courseAdd.getItems().setAll(CourseName.values());
         /**
         courseAdd.getItems().addAll(
@@ -89,8 +89,8 @@ public class ScheduleInput extends GridPane {
     public void processAddPress(ActionEvent event) {
         taskEntry.getText();
         
-        new Task(taskEntry.getText(), new Date(4, 20), courseAdd.getValue());
-        System.out.println(courseValue);
+        task = new Task(taskEntry.getText(), new Date(4, 20), courseAdd.getValue());
+        System.out.println(task);
         
 
     }
