@@ -15,30 +15,12 @@ import java.util.GregorianCalendar;
  * @version 2018
  */
 public class Task implements Comparable<Task> {
-    /** The name of the task. */
     private String taskName;
-    
-    /** The date the task is due. */
     private Date dueDate;
-    
-    /** The name of the course for the task.*/
     private CourseName course;
-    
-    /** The day of the week of the assignment due date.*/
     private int dayOfWeek;
-    
-    /** An array list that holds all the tasks, sorted by date.*/
     private static ArrayList<ArrayList<Task>> array = new ArrayList<ArrayList<Task>>();
 
-    /**
-     * Constructs a Task object.
-     * @param name
-     *      The name of the task.
-     * @param date
-     *      The due date.
-     * @param course
-     *      the course the task is for.
-     */
     public Task(String name, Date date, CourseName course) {
         taskName = name;
         dueDate = date;
@@ -50,17 +32,15 @@ public class Task implements Comparable<Task> {
         }
         
 
-        // Adds the task in the array according to its date.
         int dayNumber = getDaysNumber(date.getMonth(), date.getDay());
-<<<<<<< HEAD
         
         for (int i = 0; i < 104; i++) {
             array.add(new ArrayList<Task>());
         }
-=======
->>>>>>> refs/remotes/origin/master
         array.get(dayNumber - 1).add(this);
+
         Calendar dayName = new GregorianCalendar(2018, date.getMonth(), date.getDay());
+
         dayOfWeek = dayName.get(Calendar.DAY_OF_WEEK) - 1; // 0-6 sun-sat
 
     }
@@ -171,7 +151,7 @@ public class Task implements Comparable<Task> {
      */
     @Override
     public String toString() {
-        return " Task: " + taskName + " \nDue Date: " + dueDate.toString() + "\nCourse Name: " + course;
+        return "\tCourse Name: " + course + "\n\tTask: " + taskName + "\n";
     }
     
     public static void main(String[] args) {
