@@ -27,7 +27,10 @@ public class Task {
         this.course = course;
 
         int dayNumber = getDaysNumber(date.getMonth(), date.getDay());
-
+        
+        for (int i = 0; i < 104; i++) {
+            array.add(new ArrayList<Task>());
+        }
         array.get(dayNumber - 1).add(this);
 
         Calendar dayName = new GregorianCalendar(2018, date.getMonth(), date.getDay());
@@ -136,6 +139,7 @@ public class Task {
         return test;
 
     }
+    
 
     /**
      * @see java.lang.Object#toString()
