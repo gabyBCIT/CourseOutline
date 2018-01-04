@@ -6,7 +6,7 @@ package ca.bcit.coop.hackathon;
  * @author Gabrielle
  * @version 2018
  */
-public class Task {
+public class Task implements Comparable<Task> {
     private String taskName;
     private Date dueDate;
     private CourseName course;
@@ -72,13 +72,15 @@ public class Task {
      */
     @Override
     public String toString() {
-        return " Task: " + taskName + " Due Date: " + dueDate.toString() + "Course Name: " 
+        return "Task: " + taskName + " Due Date: " + dueDate.toString() + " Course Name: " 
                 + course;
     }
 
-
+    @Override
+    public int compareTo(Task o) {
+        return course.compareTo(o.course);
+    }
     
-
     
     
 }
