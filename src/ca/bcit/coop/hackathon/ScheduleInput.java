@@ -1,5 +1,7 @@
 package ca.bcit.coop.hackathon;
 
+import java.util.Scanner;
+
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -68,6 +70,11 @@ public class ScheduleInput extends GridPane {
     }
     
     public void processButtonPress(ActionEvent event) {
+        
+        // Reads the date as a string and converts it to a Date for the Task.
+        String date = pickDate.getEditor().getText();        
+        Scanner s = new Scanner(date).useDelimiter("/");
+        Date dueDate = new Date(s.nextInt(), s.nextInt());
         
     }
 }
