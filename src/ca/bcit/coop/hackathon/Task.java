@@ -151,7 +151,6 @@ public class Task implements Comparable<Task> {
      */
     @Override
     public String toString() {
-<<<<<<< HEAD
         return " Task: " + taskName + " \nDue Date: " + dueDate.toString() + "\nCourse Name: " + course;
     }
     
@@ -180,10 +179,7 @@ public class Task implements Comparable<Task> {
                 }
             }
         }
-=======
-        return "Task: " + taskName + " Due Date: " + dueDate.toString() + " Course Name: " 
-                + course;
->>>>>>> c62d72a4376a0bd6d1a06e44dbdabf50d6086c1a
+
     }
 
     @Override
