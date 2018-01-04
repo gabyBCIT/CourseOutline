@@ -52,13 +52,10 @@ public class Task implements Comparable<Task> {
 
         // Adds the task in the array according to its date.
         int dayNumber = getDaysNumber(date.getMonth(), date.getDay());
-<<<<<<< HEAD
         
         for (int i = 0; i < 104; i++) {
             array.add(new ArrayList<Task>());
         }
-=======
->>>>>>> refs/remotes/origin/master
         array.get(dayNumber - 1).add(this);
         Calendar dayName = new GregorianCalendar(2018, date.getMonth(), date.getDay());
         dayOfWeek = dayName.get(Calendar.DAY_OF_WEEK) - 1; // 0-6 sun-sat
