@@ -3,6 +3,9 @@ package ca.bcit.coop.hackathon;
  * 
  */
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -14,6 +17,7 @@ public class Driver2 {
 
     /**
      * @param args
+     * @throws FileNotFoundException 
      */
     //public static void main(String[] args) {
 //        Task t1 = new Task("Lab1", "Jan 08, 2017");
@@ -34,8 +38,10 @@ public class Driver2 {
         }
      */
     
-        public static void main(String[] args) {
-        
+        public static void main(String[] args) throws FileNotFoundException {
+            PrintStream out = new PrintStream(new FileOutputStream("output2.txt"));
+            System.setOut(out);
+            
             Task2 task1 = new Task2("Java Lab", new Date(2, 21), CourseName.COMP2526);
             Task2 task2 = new Task2("Web Assignment", new Date(3, 30), CourseName.COMP2121);
             Task2 task3 = new Task2("Math Quiz", new Date(3, 30), CourseName.COMP2510);

@@ -1,10 +1,15 @@
 package ca.bcit.coop.hackathon;
 
+<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import javafx.collections.FXCollections;
+=======
+import java.util.Scanner;
+
+>>>>>>> 306d38446179d2a9be811f7c794ed1b794915f48
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -109,6 +114,11 @@ public class ScheduleInput extends GridPane {
             }
             
         }
+        
+        // Reads the date as a string and converts it to a Date for the Task.
+        String date = pickDate.getEditor().getText();        
+        Scanner s = new Scanner(date).useDelimiter("/");
+        Date dueDate = new Date(s.nextInt(), s.nextInt());
         
     }
 }
