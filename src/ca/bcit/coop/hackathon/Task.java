@@ -151,7 +151,7 @@ public class Task implements Comparable<Task> {
      */
     @Override
     public String toString() {
-        return "\tCourse Name: " + course + "\n\tTask: " + taskName + "\n";
+        return "\t" + course + "\n\t\t" + taskName + "\n";
     }
     
     public static void main(String[] args) {
