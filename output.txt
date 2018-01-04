@@ -1,12 +1,10 @@
-April 20
+January 19
 
-<<<<<<< HEAD
-	null
-		Test
-=======
 	COMP2510
-		Final Exam
-		
+		asdf
 
->>>>>>> 306d38446179d2a9be811f7c794ed1b794915f48
+January 31
+
+	COMP2714
+		fds
 

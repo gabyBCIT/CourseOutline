@@ -87,12 +87,14 @@ public class ScheduleInput extends GridPane {
     }
     
     public void processAddPress(ActionEvent event) {
-        taskEntry.getText();
+        String date = pickDate.getEditor().getText();        
+        Scanner s = new Scanner(date).useDelimiter("/");
+        int day = s.nextInt();
+        int month = s.nextInt();
+        Date dueDate = new Date(month, day);
         
-        task = new Task(taskEntry.getText(), new Date(4, 20), courseAdd.getValue());
-        System.out.println(task);
+        task = new Task(taskEntry.getText(), dueDate, courseAdd.getValue());
         
-
     }
     
     public void processSubmitPress(ActionEvent event) throws FileNotFoundException {
@@ -114,11 +116,6 @@ public class ScheduleInput extends GridPane {
             }
             
         }
-        
-        // Reads the date as a string and converts it to a Date for the Task.
-        String date = pickDate.getEditor().getText();        
-        Scanner s = new Scanner(date).useDelimiter("/");
-        Date dueDate = new Date(s.nextInt(), s.nextInt());
         
     }
 }
