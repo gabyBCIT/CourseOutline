@@ -16,10 +16,19 @@ public class Date {
         this.day = day;
     }
     
+    /**
+     * 
+     * @return month
+     */
     public int getMonth() {
         return month;
     }
     
+    /**
+     * Returns the day of the month of this date.
+     *
+     * @returns the day of month
+     */
     public int getDay() {
         return day;
     }
@@ -34,4 +43,15 @@ public class Date {
     }
     
     
+    public int compareTo(Date o) {
+        if (this.month == o.month) {
+            return this.day - o.day;
+        }
+        if (this.month > o.month) {
+            return this.month - o.month;
+        } else {
+            return o.month - this.month;
+        }
+        
+    }
 }
