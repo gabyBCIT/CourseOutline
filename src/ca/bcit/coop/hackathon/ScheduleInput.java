@@ -158,7 +158,7 @@ public class ScheduleInput extends GridPane {
         
         
 
-        Text dueDate = new Text("Your tasks");
+        Text dueDate = new Text("Outline.txt generated.\nYour tasks");
         
         Font font = new Font(25);
         dueDate.setFont(font);
