@@ -25,6 +25,12 @@ public class Task {
         taskName = name;
         dueDate = date;
         this.course = course;
+        
+        for (int i = 0; i < 113; i++) {
+            ArrayList<Task> taskArray = new ArrayList<Task>();
+            array.add(taskArray);
+        }
+        
 
         int dayNumber = getDaysNumber(date.getMonth(), date.getDay());
 
@@ -131,8 +137,6 @@ public class Task {
 
         int test = (int) ChronoUnit.DAYS.between(startDate, endDate) + 1;
 
-        System.out.println(test);
-
         return test;
 
     }
@@ -143,7 +147,34 @@ public class Task {
      */
     @Override
     public String toString() {
-        return " Task: " + taskName + " Due Date: " + dueDate.toString() + "Course Name: " + course;
+        return " Task: " + taskName + " \nDue Date: " + dueDate.toString() + "\nCourse Name: " + course;
+    }
+    
+    public static void main(String[] args) {
+        
+        ArrayList<ArrayList<Task>> tasks = getArray();
+        
+        for (int i = 0; i < 10; i++) {
+        
+        CourseName course = CourseName.COMM2216;
+        Date date = new Date(1, i + 10);
+        
+        Task task = new Task("task", date, course);
+        
+        tasks.get(i).add(task);
+        
+        
+        }
+        
+        
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println("Day " + (i + 1));
+            if (!tasks.get(i).isEmpty()) {
+                for (int k = 0; k < tasks.get(i).size(); k++) {
+                    System.out.println(tasks.get(i).get(k).toString());
+                }
+            }
+        }
     }
 
 }
