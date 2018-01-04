@@ -14,7 +14,7 @@ import java.util.GregorianCalendar;
  * @author Gabrielle
  * @version 2018
  */
-public class Task {
+public class Task implements Comparable<Task> {
     private String taskName;
     private Date dueDate;
     private CourseName course;
@@ -147,6 +147,7 @@ public class Task {
      */
     @Override
     public String toString() {
+<<<<<<< HEAD
         return " Task: " + taskName + " \nDue Date: " + dueDate.toString() + "\nCourse Name: " + course;
     }
     
@@ -175,6 +176,14 @@ public class Task {
                 }
             }
         }
+=======
+        return "Task: " + taskName + " Due Date: " + dueDate.toString() + " Course Name: " 
+                + course;
+>>>>>>> c62d72a4376a0bd6d1a06e44dbdabf50d6086c1a
     }
 
+    @Override
+    public int compareTo(Task o) {
+        return course.compareTo(o.course);
+    }
 }

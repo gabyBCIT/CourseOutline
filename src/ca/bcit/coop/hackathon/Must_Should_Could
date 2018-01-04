@@ -5,7 +5,7 @@ Must
 
 
 Should
-
+	Have a task type: assignment, quiz, exam, reading, lab
 
 Could
 	Read files and parse info

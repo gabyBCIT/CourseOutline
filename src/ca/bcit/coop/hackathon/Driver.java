@@ -26,7 +26,7 @@ public class Driver {
         public static void main(String[] args) {
             Date assignment = new Date(2, 21);
             ArrayList<Task> task = new ArrayList<Task>();
-            Task task1 = new Task("Assignment", assignment);
+            Task task1 = new Task("Assignment", assignment, CourseName.COMP2526);
             task.add(task1);
             Course math = new Course("COMP", 1113, task);
             System.out.println(math.toString());
