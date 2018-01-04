@@ -39,6 +39,7 @@ public class Date {
      */
     @Override
     public String toString() {
+<<<<<<< HEAD
         String monthString = "";
         switch(month) {
         case 1:  monthString = "January ";
@@ -67,8 +68,50 @@ public class Date {
                 break;
         }
         return monthString + day;
+=======
+        String monthName = "null";
+        
+        switch(month) {
+        case 1:
+            monthName = "January";
+            break;
+        case 2:
+            monthName = "February";
+            break;
+        case 3:
+            monthName = "March";
+            break;
+        case 4:
+            monthName = "April";
+            break;
+        case 5:
+            monthName = "May";
+            break;
+        case 6:
+            monthName = "June";
+            break;
+        case 7:
+            monthName = "July";
+            break;
+        case 8:
+            monthName = "August";
+            break;
+        case 9:
+            monthName = "September";
+            break;
+        case 10:
+            monthName = "October";
+            break;
+        case 11:
+            monthName = "November";
+            break;
+        case 12:
+            monthName = "December";
+            break;
+        }
+        return monthName + " " + day;
+>>>>>>> f0f2644c2f348a808c4a0141adbe29f334b58d98
     }
-    
     
     public int compareTo(Date o) {
         if (this.month == o.month) {
@@ -79,6 +122,11 @@ public class Date {
         } else {
             return o.month - this.month;
         }
+        
+    }
+    
+    public boolean equals(Date o) {
+        return (month == o.month && day == o.day);
         
     }
 }
