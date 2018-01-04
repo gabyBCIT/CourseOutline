@@ -32,9 +32,9 @@ public class Driver {
             Date assignment = new Date(2, 21);
             Date assignment2 = new Date(4, 20);
             Date assignment3 = new Date(4, 20);
-            Task task1 = new Task("Assignment", assignment, CourseName.COMP2510);
-            Task task2 = new Task("Final Exam", assignment2, CourseName.COMP2510);
-            Task task3 = new Task("Midterm", assignment3, CourseName.COMP2510);
+            new Task("Assignment", assignment, CourseName.COMP2510);
+            new Task("Final Exam", assignment2, CourseName.COMP2510);
+            new Task("Midterm", assignment3, CourseName.COMP2510);
             for(int i = 0; i < 104; i++) {
                 for(Task temp : Task.getArray().get(i)) {
                     int currentTempIndex = Task.getArray().get(i).indexOf(temp);
