@@ -1,8 +1,19 @@
 package ca.bcit.coop.hackathon;
 
+<<<<<<< HEAD
 import java.util.Collections;
+=======
+//<<<<<<< HEAD
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
+import javafx.collections.FXCollections;
+//=======
+>>>>>>> refs/remotes/origin/master
 import java.util.Scanner;
 
+//>>>>>>> 306d38446179d2a9be811f7c794ed1b794915f48
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -26,6 +37,7 @@ public class ScheduleInput extends GridPane {
      * Provides the 
      */
     private DatePicker pickDate;
+<<<<<<< HEAD
     
     private ComboBox<String> courseAdd;
     
@@ -34,11 +46,16 @@ public class ScheduleInput extends GridPane {
     private Text complete;
     
     
+=======
+    private ComboBox<CourseName> courseAdd;
+    private Task task;
+>>>>>>> refs/remotes/origin/master
     public ScheduleInput() {
         final int horizontalGap = 50;
         final int verticalGap = 10;
         
         Text courseChoice = new Text("Choose the course: ");
+<<<<<<< HEAD
         courseAdd = new ComboBox<String>();
         courseAdd.getItems().addAll(
                 "\t\t",
@@ -51,6 +68,21 @@ public class ScheduleInput extends GridPane {
                 );
         
         courseAdd.setValue("\t\t");
+=======
+        courseAdd = new ComboBox<CourseName>();
+        courseAdd.getItems().setAll(CourseName.values());
+        /**
+        courseAdd.getItems().addAll(
+                CourseName.COMP2526,
+                CourseName.COMP2121,
+                CourseName.COMP2510,
+                CourseName.COMP2714,
+                CourseName.COMP2721,
+                CourseName.COMM2216
+                );
+        */
+      
+>>>>>>> refs/remotes/origin/master
         
         Text task = new Text("Name the task: ");
         taskEntry = new TextField();
@@ -59,13 +91,24 @@ public class ScheduleInput extends GridPane {
         pickDate = new DatePicker();
         
         Button button = new Button("Add");
-        button.setOnAction(this::processButtonPress);
+        button.setOnAction(this::processAddPress);
         
         Button submit = new Button("Submit");
+<<<<<<< HEAD
         submit.setOnAction(this::processDatePicker);
         
         complete = new Text("");
         
+=======
+        submit.setOnAction(arg0 -> {
+            try {
+                processSubmitPress(arg0);
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        });
+>>>>>>> refs/remotes/origin/master
         
         setAlignment(Pos.CENTER);
         setHgap(horizontalGap);
@@ -83,6 +126,7 @@ public class ScheduleInput extends GridPane {
         add(submit, 1, 6);
     }
     
+<<<<<<< HEAD
     public void processButtonPress(ActionEvent event) {
         
         taskCounter++;
@@ -93,6 +137,38 @@ public class ScheduleInput extends GridPane {
         // Reads the date as a string and converts it to a Date for the Task.
         String date = pickDate.getEditor().getText();        
         Scanner s = new Scanner(date).useDelimiter("/");
+=======
+    public void processAddPress(ActionEvent event) {
+        String date = pickDate.getEditor().getText();        
+        Scanner s = new Scanner(date).useDelimiter("/");
+        int day = s.nextInt();
+        int month = s.nextInt();
+        Date dueDate = new Date(month, day);
+        
+        task = new Task(taskEntry.getText(), dueDate, courseAdd.getValue());
+        
+    }
+    
+    public void processSubmitPress(ActionEvent event) throws FileNotFoundException {
+        PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
+        System.setOut(out);
+        for(int i = 0; i < 104; i++) {
+            for(Task temp : Task.getArray().get(i)) {
+                int currentTempIndex = Task.getArray().get(i).indexOf(temp);
+                int prevTempIndex = currentTempIndex - 1;
+                if(currentTempIndex == 0) {
+                    System.out.println(temp.getDueDate().toString() + "\n");
+                }
+                if (currentTempIndex > 0) {
+                    if(temp.getCourse().equals(Task.getArray().get(i).get(prevTempIndex).getCourse())) {
+                        System.out.println("\t\t" + temp.getTaskName());
+                    }
+                } else 
+                System.out.println(temp.toString());
+            }
+            
+        }
+>>>>>>> refs/remotes/origin/master
         
         int day = s.nextInt();
         int month = s.nextInt();
