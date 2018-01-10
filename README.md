@@ -1,5 +1,5 @@
 # CourseOutline
-This is a program which takes user input and creates a compiled, semester-long outline for the second CST term. It was created with a team of five over 12 hours at the BCIT Co-op Hackathon, January 2018.
+This is a program which uses a GUI to take user input and create a compiled, semester-long outline for the second CST term. It was created with a team of five over 12 hours at the BCIT Co-op Hackathon, January 2018.
 
 Improvements:
 - Being able to add and remove custom courses
